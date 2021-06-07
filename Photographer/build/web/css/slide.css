@@ -1,0 +1,23 @@
+.next {
+    /* right: 17px; */
+    border-radius: 3px 0 0 3px;
+    left: 548px;
+}
+.slide-container
+{
+    max-width: 1000px;
+    position: relative;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 48%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}

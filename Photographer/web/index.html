@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Code By Visua Code</title>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script type="text/javascript" src="js/json.js"></script>
+    </head>
+
+    <body>
+        <script>
+            //Load init
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '2907988572861850',
+                    cookie: true, // Enable cookies to allow the server to access the session.
+                    xfbml: true, // Parse social plugins on this webpage.
+                    version: 'v10.0.'           // Use this Graph API version for this call.
+                });
+                FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
+                    statusChangeCallback(response); // Returns the login status.
+                });
+            };
+            function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function (response) {
+                    console.log('Successful login for: ' + response.name);
+                    document.getElementById('status').innerHTML =
+                            'Thanks for logging in, ' + response.name + '!';
+                });
+            }
+
+            //XU LY TRANG THAI DANG NHAP
+            function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+
+                if (response.status === 'connected') {
+                    // Logged into your webpage and Facebook.
+                    alert('Ban da dang nhap thanh cong');
+                } else if (response.status === 'not_authorized') {
+                    alert('Ban chua dang nhap ung dung');
+                } else {                                 // Not logged into your webpage or we are unable to tell.
+                    document.getElementById('status').innerHTML = 'Please log ' +
+                            'into this webpage.';
+                }
+            }
+
+
+            function checkLoginState() {               // Called when a person is finished with the Login Button.
+                FB.getLoginStatus(function (response) {   // See the onlogin handler
+                    statusChangeCallback(response);
+                });
+            }
+            //[3]
+            function  requestLogInFB() {
+                window.location = 'http://graph.facebook.com/oauth/authorize?client_id=2907988572861850&scope=public_profile,email,user_likes,publish_actions&redirect_uri=http://localhost:8080/Photographer/index.html&response_type=token';
+
+            }
+        </script>
+
+
+
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=310302665968750";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <div>
+            <input type="button" value="Dang Nhap" onclick="requestLogInFB()"/>
+        </div>
+
+       
+        <!--Hien Thi nut like-->>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=2907988572861850&autoLogAppEvents=1" nonce="5gaWls6o"></script>
+        <br/>
+        <a onclick="share()" href="">Share</a>
+        <script>
+            function share() {
+                FB.ui({
+                    method: 'share',
+                    href: 'http://us-123photo.simplesite.com/'
+                }, function (response) {
+                });
+            }
+        </script>
+
+    </body>
+
+</html>

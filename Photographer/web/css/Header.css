@@ -1,0 +1,102 @@
+body {
+    font-family: 'Times New Roman', Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Helvetica, Arial, sans-serif;
+}
+
+.top {
+    width: 1000px;
+}
+
+.nav {
+    width: 130%;
+    height: auto;
+    overflow: hidden;
+    background-color: #303030;
+    padding-top: 0;
+    margin: 0px;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 0 161px;
+}
+
+.nav-inner li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+.nav-inner ul {
+    margin: 0px;
+
+}
+
+.nav-inner a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.header {
+    width: 897px;
+    height: auto;
+    background-color: #722f31;
+    display: inline-block;
+    padding: 40px 500px 40px 200px;
+}
+
+.header div {
+    float: left;
+}
+
+.image {
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.image img {
+    width: 83px;
+    height: 83px;
+}
+
+.title {
+    color: white;
+    font-size: 21px;
+}
+
+
+p.patitle {
+    font-size: 41px;
+    margin-top: -6px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Helvetica, Arial, sans-serif;
+}
+p.patitle:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.image img:hover
+{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+p.subtitle {
+    margin-top: 10px;
+}
+@media only screen and (max-width:330px){
+    .nav
+    {
+        padding-left: 0px;
+    }
+    .header
+    {
+        padding-left: 74px;
+    }
+}

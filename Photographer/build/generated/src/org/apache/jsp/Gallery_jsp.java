@@ -1,0 +1,186 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import dal.ImageDAO;
+import model.Image;
+import java.util.ArrayList;
+import model.Gallery;
+
+public final class Gallery_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html lang=\"en\">\r\n");
+      out.write("\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta charset=\"UTF-8\">\r\n");
+      out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
+      out.write("        <title>Gallery</title>\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/Header.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/HomePage.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/Right.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/gallery.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/GalleryPage.css\">\r\n");
+      out.write("    </head>\r\n");
+      out.write("\r\n");
+      out.write("    <body style=\"padding-left: 100px;padding-right: 100px;\">\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("            <div class=\"main\">\r\n");
+      out.write("                <!--top-->\r\n");
+      out.write("                ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Header.jsp", out, false);
+      out.write("\r\n");
+      out.write("                <!--Body-->\r\n");
+      out.write("                ");
+Gallery g = null;
+                    if (request.getAttribute("gal") != null) {
+                        g = (Gallery) request.getAttribute("gal");
+                    }
+                
+      out.write("\r\n");
+      out.write("                <div class=\"body-page gla\">\r\n");
+      out.write("                    <div class=\"body-1\">\r\n");
+      out.write("                        <div class=\"intro-product\">\r\n");
+      out.write("                            ");
+
+                                if (g != null) {
+                            
+      out.write("\r\n");
+      out.write("                            <h1 class=\"name-gallery\">");
+      out.print(g.getTitleGallery());
+      out.write("</h1>\r\n");
+      out.write("                            ");
+
+                                }
+                            
+      out.write("\r\n");
+      out.write("                            <img src=\"img/img7.jpg\" alt=\"\">\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Right.jsp", out, false);
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <!--List Gallery-->\r\n");
+      out.write("                    <div class=\"body-gallery\">\r\n");
+      out.write("                        <table>\r\n");
+      out.write("                            ");
+
+                                if (request.getAttribute("listImg") != null) {
+                                    ArrayList<Image> listImg = (ArrayList<Image>) request.getAttribute("listImg");
+                                    int row = listImg.size() / 4;
+                                    if (listImg.size() % 4 != 0) {
+                                        row++;
+                                    }
+                                    int start = 0, end = 3;
+                                    if (listImg.size() < 4) {
+                                        end = listImg.size();
+                                    }
+                                    for (int i = 0; i <= row; i++) {
+                                        ArrayList<Image> listBetween = new ImageDAO().getArrayBetween(listImg, start, end);
+                            
+      out.write("\r\n");
+      out.write("                            <tr>\r\n");
+      out.write("                                ");
+
+                                    for (Image im : listBetween) {
+                                
+      out.write("\r\n");
+      out.write("                                <td>\r\n");
+      out.write("                                    <div class=\"item-gallery\">\r\n");
+      out.write("                                        <img src=\"img/");
+      out.print(im.getUrl());
+      out.write("\" alt=\"\">\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                </td>\r\n");
+      out.write("                                ");
+ }
+                                    start = end + 1;
+                                    end += 4;
+                                
+      out.write("\r\n");
+      out.write("                            </tr>\r\n");
+      out.write("\r\n");
+      out.write("                            ");
+ start += 4;
+                                        end += 4;
+                                        if (listImg.size() < end) {
+                                            end = listImg.size();
+                                        }
+                                    }
+                                }
+      out.write("\r\n");
+      out.write("                        </table>\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <!--Footer-->\r\n");
+      out.write("                <div class=\"footer\">\r\n");
+      out.write("                    <div class=\"link-number\">\r\n");
+      out.write("                        <a href=\"\">Created with SimpleSite</a>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">8</span>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">3</span>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">1</span>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">9</span>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">9</span>\r\n");
+      out.write("                        <span class=\"footer-page-counter-item\">7</span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("\r\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

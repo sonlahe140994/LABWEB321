@@ -1,0 +1,93 @@
+body
+{
+    font-family: sans-serif;
+    background-color: #E7E7E7;
+}
+.title
+{
+
+    font-size: 18px;
+    color: #42554e;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.image img
+{
+    width: 400px;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.text
+{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.signature
+{
+    float: right;
+    font-weight: 600;
+    color: #42554e;
+    font-size: 10px;
+    margin-top: 5px;
+    display: inline-flex;
+}
+.icon1
+{
+    background-image: url(../images/comment.gif);
+    width: 10px;
+    height: 10px;
+}
+.icon2
+{
+    height: 10px;
+    width: 10px;
+    background-image: url(../images/timeicon.gif);
+}
+.main
+{
+    width: 485px;
+    padding: 20px;
+    border-right: dotted 2px;
+    border-color:#e0e0e0; 
+}
+
+.container
+{
+    background-image: url(../images/bg.jpg);
+    background-repeat:repeat-y; 
+    width: 886px;
+    height: auto;
+    margin: 0 auto;
+}
+.content
+{
+    width: 760px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+
+}
+.header iframe
+{
+    width: 866px;
+    height: 250px;
+}
+.footer
+{
+    background-image: url(../images/footer.jpg);
+    width: 887px;
+    height: 78px;
+}
+
+@media only screen and (max-width: 400px) {
+    .content
+    {
+        display: block;
+        margin-left: 150px;
+    }
+    .right{
+        margin-left: 100px;
+    }
+}

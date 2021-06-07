@@ -1,0 +1,34 @@
+h1 {
+    font-family: 'Times New Roman', Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 100;
+}
+
+.body-1 {
+    height: 400px;
+}
+
+#tb1 {
+    margin-bottom: 20px;
+}
+
+#tb1,
+#tb2 {
+    color: white;
+    width: 225px;
+}
+
+#map {
+    width: 630px;
+    height: 460px;
+    background-color: yellow;
+}
+@media only screen and (max-width:430px){
+    .map{
+        margin-top: 200px;
+    }
+    .intro-product
+    {
+        height: 296px;
+    }
+}
