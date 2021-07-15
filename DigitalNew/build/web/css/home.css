@@ -11,6 +11,10 @@ body
     font-weight: bold;
     padding-bottom: 15px;
 }
+.title p {
+    position: relative;
+    top: -19px;
+}
 .image img
 {
     width: 400px;
@@ -67,6 +71,7 @@ body
     margin: 0 auto;
     height: auto;
     display: flex;
+    position: relative;
 
 }
 .header iframe

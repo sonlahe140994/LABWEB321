@@ -34,7 +34,7 @@
                             <img id="myImg" src="img/<%=i.getUrl()%>" alt="Lorem ipsum dolor sit amet">
                             <p style="font-style: italic;">Lorem ipsum dolor sit amet</p>
                             <div id="myModal" class="modal">
-                                <span class="close" id="close">X</span>
+                                <div class="close" id="close">X</div>
                                 <img class="modal-content" id="imgmodal">
                                 <div id="caption"></div>
                             </div>
@@ -51,9 +51,6 @@
                             ImageDAO id = new ImageDAO();
                     %>
                     <div class="body-2">
-
-
-
                         <%
                             for (int i = 0; i < gaList.size(); i++) {
                                 if (gaList.get(i) != null) {

@@ -73,20 +73,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="intro-product" id="sci">
-                            <div class="header-right">
-                                <h4>Share this page</h4>
-                            </div>
-                            <div class="social">
-                                <div>
-                                    <ul class="ulsocial">
-                                        <li><img src="img/face.png" alt=""><a href="">Share on Facebook</a></li>
-                                        <li><img src="img/twitter.png" alt=""><a href="">Share on Twitter</a></li>
-                                        <li><img src="img/google.png" alt=""><a href="">Share on Google+</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <jsp:include page="Right.jsp"/>
                     </div>
                     <!--List Gallery-->
                     <div class="map">

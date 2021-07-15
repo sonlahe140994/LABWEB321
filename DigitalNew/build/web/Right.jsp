@@ -31,10 +31,20 @@
                 <div class="titleNews">
                     <span>Search</span>
                 </div>
-                <form action="SearchServlet" method="post">
-                    <input class="searchBox" type="text" name="searchText" size="15"  required>
-                    <input id="go-button" class="searchButton" type="submit" name="btnGo" value="Go">
-                </form>
+                <div>
+                    <form action="SearchServlet" method="post" >
+                        <%
+                            if (request.getAttribute("sString") != null) {
+                                String searchString = (String) request.getAttribute("sString");
+                        %>
+                        <input class="searchBox" id="searchInput" name="searchT" type="text" size="15" value="<%=searchString%>"  required>
+                        <%} else {%>
+                        <input class="searchBox" id="searchInput" name="searchT" type="text" size="15"  required>
+                        <%}%>
+                        <!--<a id="searchGoBtn">GO</a>-->
+                        <input id="searchGoBtn" type="submit" value="Go">
+                    </form>
+                </div>
             </div>
             <div class="newest test" >
                 <div class="titleNews">

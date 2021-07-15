@@ -88,10 +88,16 @@ public class Post {
         this.shortDesPost = shortDesPost;
     }
 
+    @Override
+    public String toString() {
+        return "Post{" + "idPost=" + idPost + ", titlePost=" + titlePost + ", descriptPost=" + descriptPost + ", imgPost=" + imgPost + ", authorPost=" + authorPost + ", timePost=" + timePost + ", shortDesPost=" + shortDesPost + '}';
+    }
+
+
     public String formatDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd yyyy - hh:mm aaa ");
         try {
-            Date d = new Date(timePost.getTime());
+            Date d = new Date(this.timePost.getTime());
             String dateString = sdf.format(d);
             return dateString;
         } catch (Exception e) {

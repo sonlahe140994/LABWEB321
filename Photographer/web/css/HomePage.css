@@ -69,7 +69,6 @@
     padding: 2px 2px 1px;
     margin: 3px 2px 0 0;
     border-radius: 4px;
-    box-shadow: 0 1px 2px #595959;
     text-align: center;
     color: #000;
     font-weight: 700;
@@ -131,7 +130,19 @@ img:hover
 {
     display: none;
 }
-
+.close {
+    position: inherit;
+    top: 100px;
+    left: 1100px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+}
+.close:hover
+{
+    cursor: pointer;
+    opacity: 0.95;
+}
 #myModal
 {
     position: fixed;
@@ -145,7 +156,7 @@ img:hover
 }
 @media only screen and (max-width: 426px) {
     .body-1 {
-        display: block;
+        flex-direction: column-reverse;
     }
     #sci {
         margin-left: 0px;
@@ -163,11 +174,5 @@ img:hover
     }
     .body-page{
         padding: 28px 35% 0 90px;
-    }
-    .pag
-    {
-        padding-top: 0px;
-        padding-left: 50px;
-        margin-top: -50px;
     }
 }

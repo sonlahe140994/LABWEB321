@@ -1,0 +1,32 @@
+.header
+{
+    max-width: 663px;
+}
+.list-btn
+{
+    background:url(../img/menu_bg.gif) no-repeat ;
+    position: relative;
+    display: flex;
+    width: 665px;
+    height: 50px;
+    background: url(../img/menu_bg.gif) no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.list-btn .btn-header
+{
+    width: 100px;
+    height: 18px;
+    position: relative;
+    text-align: center;
+}
+.btn-header a
+{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: gray;
+}

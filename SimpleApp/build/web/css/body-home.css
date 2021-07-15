@@ -1,0 +1,392 @@
+.body {
+    width: 1600px;
+    background-color: #e9e9e9;
+}
+
+.notification {
+    width: 100%;
+    height: 70px;
+    background-color: #fff6c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.notification p span {
+    font-weight: bold;
+}
+
+.notification p {
+    font-size: 15px;
+    width: 840px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", arial, sans-serif;
+    max-width: 576px;
+    color: #717171;
+}
+.list-img-card {
+    width: 100%;
+    position: relative;
+}
+.list-img-card img 
+{
+    width: 100%;
+}
+.body-item {
+    width: 1600px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #e9e9e9;
+    margin-top: 1px;
+}
+
+
+
+.pin-save-icon {
+    width: 16px;
+    height: 26px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-desktop-1x-2fd51091.png) -467px -233px no-repeat;
+}
+
+.save-button {
+    width: 75px;
+    height: 36px;
+    background-color: red;
+    border-radius: 4px;
+    opacity: 0;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save-button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.save-button span {
+    color: white;
+    font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
+    font-weight: bold;
+}
+
+.card {
+    width: 236px;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 22%);
+    margin: 10px 10px 10px 10px;
+}
+
+.repin {
+    width: 14px;
+    height: 11px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-above_the_fold-1x-729647ec.png) -361px -125px no-repeat;
+    display: inline-block;
+    font: 0 / 0 serif;
+    text-shadow: none;
+    color: transparent;
+    margin-bottom: -3px;
+}
+
+.social-meta-count {
+    color: #999;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    top: 1px;
+}
+
+.like-icon {
+    width: 12px;
+    height: 10px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-above_the_fold-1x-729647ec.png) -283px -234px no-repeat;
+    display: inline-block;
+    font: 0 / 0 serif;
+    text-shadow: none;
+    color: transparent;
+    margin-bottom: -3px;
+}
+
+.card article div {
+    display: inline;
+    margin-left: 10px;
+}
+
+.card article {
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding-bottom: 5px;
+    font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
+}
+
+.card article p {
+    padding-left: 10px;
+    word-wrap: break-word;
+    color: #555;
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+    font-size: 13px;
+    line-height: 17px;
+    padding-top: 10px;
+}
+
+
+.card article div span {
+    font-size: 11px;
+}
+
+.credit-item {
+    line-height: 15px;
+    padding: 10px;
+    position: relative;
+    display: inline-flex;
+    height: 25px;
+    width: 92%;
+    align-items: center;
+}
+
+.credit-item div p {
+    margin: 0;
+    padding-left: 10px;
+    font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
+    color: #555;
+}
+
+.credit-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.credit-type-img {
+    font-size: 12px;
+}
+
+.credit-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.credit-button {
+    display: none;
+    border: none;
+    width: 17px;
+    height: 17px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-above_the_fold-1x-729647ec.png) -100px -337px no-repeat;
+}
+
+.credit-button:hover {
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-above_the_fold-1x-729647ec.png) -119px -337px no-repeat;
+}
+
+.credit-infor {
+    width: 160px;
+}
+
+.footer-card {
+    font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
+    ;
+    border-top: 1px solid #e7e7e7;
+    color: #b0b0b0;
+    font-size: 11px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 9px 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.row-item {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.expand
+{
+    height: 36px;
+    background-color: rgba(255,255,255,0.85);    z-index: 51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-family: "Helvetica Neue","Helvetica","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック",arial,sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px;
+    position: absolute;
+    bottom: 0;
+    width: 236px;
+}
+.expand
+{
+    background-color: rgba(255,255,255,0.95);
+}
+
+.card article title 
+{
+    display: block;
+    overflow: hidden;
+    clear: both;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    max-height: 68px;
+    padding: 5px 5px 0px 10px;
+}
+a {
+    color: #717171;
+    font-weight: bold;
+    text-decoration: none;
+}
+.card article a 
+{
+    font-size: 13px;
+    padding: 0px 3px 3px 14px;
+}
+aside {
+    display: inline-flex;
+}
+aside img
+{
+    width: 16px;
+    height: 16px;
+}
+aside img,span
+{
+    color: #aaa;
+    font-weight: normal;
+    margin: 9px 7px 7px 5px;
+    font-size: 11px;
+}
+.logo-contact
+{
+    width: 18px;
+    height: 26px;
+    background: url(https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-main-1x-7c8ed944.png) -295px 6px no-repeat;
+}
+.link-contact {
+    display: flex;
+    align-items: center;
+    width: 231px;
+    height: 30px;
+    position: absolute;
+    padding-left: 5px;
+    bottom: 10px;
+}
+.contact-text
+{
+    /*color: #fff;*/
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", arial, sans-serif;
+    color: #fff;
+}
+
+.card :hover
+{
+    cursor: pointer;
+
+}
+
+.info-card 
+{
+    width: 236px;
+    height: 404px;   
+    border-radius: 6px;
+    font-family: "Helvetica Neue","Helvetica","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック",arial,sans-serif;
+    margin-top: 9px;
+}
+
+.list-img-suggest
+{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: 213px;
+    height: 215px;
+    overflow: hidden;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.list-img-suggest img
+{
+    display: block;
+    width: 106px;
+    height: 106px;
+}
+.footer-invite-saving a
+{
+    color: #5f5f5f;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 14px;
+    width: 200px;
+    height: 25px;
+}
+.footer-invite-saving 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.arrow
+{
+    background: url("https://s-passets-cache-ak0.pinimg.com/webapp/style/sprites/webapp-common-above_the_fold-1x-729647ec.png") -328px -206px no-repeat;
+    width: 9px;
+    height: 13px;
+}
+.invite-saving {
+    font-size: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+.invite-saving p
+{
+    color: #555;
+    display: block;
+    font-weight: 700;
+    margin: auto;
+    padding: 10px 7px;
+    width: 222px;
+    font-size: 14px;
+}
+.invite-bar
+{
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 24px;
+}
+.link-contact a {
+    display: flex;
+    align-items: center;
+}

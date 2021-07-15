@@ -1,0 +1,12 @@
+
+.list-gallery
+{
+    max-width: 100%;
+    column-count: 6;
+    padding: 10px 75px 10px 75px;
+}
+
+.card{
+    break-inside: avoid-column;
+    display: block;
+}

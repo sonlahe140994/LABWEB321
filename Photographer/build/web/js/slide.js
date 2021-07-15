@@ -7,7 +7,6 @@ function showSlide() {
     for (let i = 0; i < objSlide.length; i++) {
         objSlide[i].style.display = "none";
     }
-    console.log(index);
     objSlide[index].style.display = "block";
 }
 

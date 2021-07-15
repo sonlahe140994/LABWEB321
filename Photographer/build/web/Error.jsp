@@ -14,7 +14,7 @@
     </head>
 
 
-    <body style="padding-left: 100px;padding-right: 100px;">
+    <body>
         <div class="container">
             <div class="main">
                 <!--top-->
@@ -44,7 +44,14 @@
                 <!--Body-->
                 <div class="body-page">
                     <div class="body-1">
+                        <%
+                            if (request.getAttribute("mess") != null) {
+                                String mess = (String) request.getAttribute("mess");
+                        %>
+                        <h1><%=mess%></h1>
+                        <%} else {%>
                         <h1>Error</h1>
+                        <%}%>
                     </div>
                 </div>
                 <!--Footer-->

@@ -5,6 +5,7 @@
  */
 package dal;
 
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,26 +22,59 @@ public class PostDAO extends DBContext {
 
     Statement st;
     ResultSet rs;
+    Connection con;
+
+    public ArrayList<Post> getPostByAuId(int id) throws ClassNotFoundException, SQLException {
+        ArrayList<Post> l = new ArrayList<>();
+        String query = "select top 5 p.idPost,p.titlePost,p.descript,p.img,a.authorName,p.timePost,p.shortDes \n"
+                + "from Post p join Author a on p.author = a.authorId where p.author =" + id;
+        try {
+            con = getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                int idPost = rs.getInt("idPost");
+                String titlePost = rs.getString("titlePost");
+                String decript = rs.getString("descript");
+                String img = rs.getString("img");
+                String author = rs.getString("authorName");
+                Date date = rs.getDate("timePost");
+                String shortDes = rs.getString("shortDes");
+                Post p = new Post(idPost, titlePost, decript, img, author, date, shortDes);
+                l.add(p);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
+            l.clear();
+        } finally {
+            closeConnection(rs, st, getConnection());
+        }
+        return l;
+    }
 
     public Post getPostById(int id) throws ClassNotFoundException, SQLException {
         Post p = null;
         try {
-            String query = "select * from Post where idPost = " + id;
-            st = getConnection().createStatement();
+            String query = "select p.idPost,p.titlePost,p.descript,p.img,a.authorName,p.timePost,p.shortDes \n"
+                    + "from Post p join Author a on p.author = a.authorId\n"
+                    + "where p.idPost = " + id;
+            con = getConnection();
+            st = con.createStatement();
             rs = st.executeQuery(query);
-            if (rs.next()) {
-                int idPost = rs.getInt(1);
-                String titlePost = rs.getString(2);
-                String descriptPost = rs.getString(3);
-                String imgPost = rs.getString(4);
-                String authorPost = rs.getString(5);
-                Date timePost = rs.getDate(6);
-                String shortDes = rs.getString(7);
-                p = new Post(idPost, titlePost, descriptPost, imgPost, authorPost, praseDate(timePost), shortDes);
+            while (rs.next()) {
+                int idPost = rs.getInt("idPost");
+                String titlePost = rs.getString("titlePost");
+                String decript = rs.getString("descript");
+                String img = rs.getString("img");
+                String author = rs.getString("authorName");
+                Date date = rs.getDate("timePost");
+                String shortDes = rs.getString("shortDes");
+                p = new Post(idPost, titlePost, decript, img, author, date, shortDes);
             }
-            closeConnection(rs, st, getConnection());
         } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
             p = null;
+        } finally {
             closeConnection(rs, st, getConnection());
         }
 
@@ -58,80 +92,59 @@ public class PostDAO extends DBContext {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         PostDAO pd = new PostDAO();
-        ArrayList<Post> p = pd.getSearchListPost("i");
-        if (p != null) {
-            for (Post pos : p) {
-                System.out.println(pos.getIdPost());
-            }
+        ArrayList<Post> l = pd.getPostByAuId(1);
+        for (Post i : l) {
+            System.out.println(i.toString());
         }
-        int index = 4;
-        int start = 0, end = 0;
-        if (p.size() <= 2) {
-            start = 0;
-            end = p.size();
-        } else {
-            start = (index - 1) * 2;
-            if (start == p.size() - 1) {
-                end = p.size();
-            } else {
-                end = start + 2;
-            }
-        }
-        System.out.println(start + " | " + end);
-        System.out.println("-------------------");
-        ArrayList<Post> l = pd.getListPostBetween(p, start, end);
-        for (Post pos : l) {
-            System.out.println(pos.getIdPost());
-        }
-
     }
 
     public Post getMostRecentNews() throws ClassNotFoundException, SQLException {
         Post p = null;
         try {
-            String query = "select top 1 * from Post order by timePost desc";
-            Statement st = getConnection().createStatement();
-            ResultSet rs = st.executeQuery(query);
+            String query = "select top 1 p.idPost,p.titlePost,p.descript,p.img,a.authorName,p.timePost,p.shortDes from Post p join Author a on p.author = a.authorId";
+            con = getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(query);
             if (rs.next()) {
-                int idPost = rs.getInt(1);
-                String titlePost = rs.getString(2);
-                String descriptPost = rs.getString(3);
-                String imgPost = rs.getString(4);
-                String authorPost = rs.getString(5);
-                Date timePost
-                        = rs.getDate(6);
-                String shortDes = rs.getString(7);
-                p = new Post(idPost, titlePost, descriptPost, imgPost, authorPost, praseDate(timePost), shortDes);
+                int id = rs.getInt("idPost");
+                String titlePost = rs.getString("titlePost");
+                String decript = rs.getString("descript");
+                String img = rs.getString("img");
+                String author = rs.getString("authorName");
+                Date date = rs.getDate("timePost");
+                String shortDes = rs.getString("shortDes");
+                p = new Post(id, titlePost, decript, img, author, date, shortDes);
             }
-            closeConnection(rs, st, getConnection());
         } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error: " + e.getMessage());
             p = null;
-            closeConnection(rs, st, getConnection());
         }
-
         return p;
     }
 
     public ArrayList<Post> getLastArticle() throws ClassNotFoundException, SQLException {
         ArrayList<Post> listPost = new ArrayList<>();
         try {
-            String query = "select top 5 * from Post order by timePost desc";
-            Statement st = getConnection().createStatement();
-            ResultSet rs = st.executeQuery(query);
+            String query = "select top 5 p.idPost,p.titlePost,p.descript,p.img,a.authorName,p.timePost,p.shortDes \n"
+                    + "from Post p join Author a on p.author = a.authorId order by p.timePost desc";
+            con = getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(query);
             while (rs.next()) {
-                int idPost = rs.getInt(1);
-                String titlePost = rs.getString(2);
-                String descriptPost = rs.getString(3);
-                String imgPost = rs.getString(4);
-                String authorPost = rs.getString(5);
-                Date timePost = rs.getDate(6);
-                String shortDes = rs.getString(7);
-                Post p = new Post(idPost, titlePost, descriptPost, imgPost, authorPost, praseDate(timePost), shortDes);
+                int id = rs.getInt("idPost");
+                String titlePost = rs.getString("titlePost");
+                String decript = rs.getString("descript");
+                String img = rs.getString("img");
+                String author = rs.getString("authorName");
+                Date date = rs.getDate("timePost");
+                String shortDes = rs.getString("shortDes");
+                Post p = new Post(id, titlePost, decript, img, author, date, shortDes);
                 listPost.add(p);
             }
-            closeConnection(rs, st, getConnection());
         } catch (ClassNotFoundException | SQLException e) {
-            listPost = null;
+            System.out.println(e.getMessage());
+            listPost.clear();
+        } finally {
             closeConnection(rs, st, getConnection());
         }
         return listPost;
@@ -140,23 +153,25 @@ public class PostDAO extends DBContext {
     public ArrayList<Post> getSearchListPost(String searchString) throws ClassNotFoundException, SQLException {
         ArrayList<Post> listPost = new ArrayList<>();
         try {
-            String query = "select * from Post where titlePost like '%" + searchString.trim() + "%' order by timePost desc";
-            Statement st = getConnection().createStatement();
-            ResultSet rs = st.executeQuery(query);
+            String query = "select * from Post where titlePost like N'%" + searchString + "%'";
+            con = getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(query);
             while (rs.next()) {
-                int idPost = rs.getInt(1);
-                String titlePost = rs.getString(2);
-                String descriptPost = rs.getString(3);
-                String imgPost = rs.getString(4);
-                String authorPost = rs.getString(5);
-                Date timePost = rs.getDate(6);
-                String shortDes = rs.getString(7);
-                Post p = new Post(idPost, titlePost, descriptPost, imgPost, authorPost, praseDate(timePost), shortDes);
+                int id = rs.getInt("idPost");
+                String titlePost = rs.getString("titlePost");
+                String decript = rs.getString("descript");
+                String img = rs.getString("img");
+                String author = rs.getString("authorName");
+                Date date = rs.getDate("timePost");
+                String shortDes = rs.getString("shortDes");
+                Post p = new Post(id, titlePost, decript, img, author, date, shortDes);
                 listPost.add(p);
             }
-            closeConnection(rs, st, getConnection());
         } catch (ClassNotFoundException | SQLException e) {
-            listPost = null;
+            System.out.println(e.getMessage());
+            listPost.clear();
+        } finally {
             closeConnection(rs, st, getConnection());
         }
         return listPost;

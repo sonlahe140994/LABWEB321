@@ -5,11 +5,8 @@
     border-width: 20px;
     border-color: black;
     display: inline-block;
-    border: 2px solid gray;
-    border-radius: 2%;
     padding: 0px;
 }
-
 .sText p
 {
     text-align: center;
@@ -17,7 +14,11 @@
     font-weight: bold;
     text-decoration: none;
 }
-
+.title-search:hover
+{
+    cursor: pointer;
+    color: red;
+}
 .sResult img
 {
     max-width: 500px;
@@ -53,7 +54,23 @@
     text-decoration: none;
     margin: 3px;
 }
+.page-link:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
 .pag
 {
     margin-top: 20px;
+}
+#length-result
+{
+    font-size: 15px;
+    color: red;
+    position: absolute;
+    left: 30px
+}
+.highlight
+{
+    background-color: yellow;
+    text-decoration: underline;
 }

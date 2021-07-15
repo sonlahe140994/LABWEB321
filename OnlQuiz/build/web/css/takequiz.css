@@ -1,0 +1,99 @@
+.container {
+    width: 700px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 110px 0;
+    border-radius: 15px;
+    font-family: system-ui;
+}
+.body
+{
+    width: 600px;
+    padding-left: 30px;
+}
+.welcome {
+    margin: 40px 0 40px 0;
+}
+.welcome p
+{
+    font-size: 20px;
+    color: gray;
+}.welcome span 
+{
+    color: darkblue;
+    font-weight: 700;
+}
+.enter
+{
+    color: gray;
+    position: relative;
+}
+.enter h1 
+{
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+.enter input[type="text"] {
+    width: 84px;
+}
+.enter button
+{
+    position: absolute;  
+    left: 250px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.quiz
+{
+    position: relative;
+    display: none
+}
+.time 
+{
+    position:relative;
+    left: 330px;
+    color: gray;
+    font-size: 20px;
+}
+.time span 
+{
+    color: red;
+}
+.list-ques
+{
+    position: relative; 
+    color: gray;  
+}
+.ques h2 
+{
+    font-size: 20px;
+    font-weight: normal;
+}
+.ques ul
+{
+    margin-left: 0;
+    list-style: none;
+}
+.ques li 
+{
+    position: relative;
+    left: -20px;
+}
+.btn-next 
+{
+    position: relative;
+    right: 0;
+}
+.score {
+    color: gray;
+    font-size: 17px;
+    font-weight: 500;
+}
+.score span 
+{
+    color: darkblue;
+}
